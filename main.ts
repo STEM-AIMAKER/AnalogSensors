@@ -1,7 +1,7 @@
 /**
  * Hanshin STEM Sensors
  */
-//% color=190 weight=100 icon="\uf1ec" block="Hanshin STEM analog sensors"
+//% color=190 weight=100 icon="\uf1ec" block="HANSHIN: analog sensors"
 //% groups=['Analog Sound','Ambient Light','Flame', 'Moisture','Tracker','others']
 namespace HanshinAnalogSensors
 {
