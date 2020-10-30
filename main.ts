@@ -2,14 +2,23 @@
  * Hanshin STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="Hanshin STEM analog sensors"
-//% groups=['Ambient Light','Flame', 'Moisture','Tracker','others']
+//% groups=['Analog Sound','Ambient Light','Flame', 'Moisture','Tracker','others']
 namespace HanshinAnalogSensors
 {
 /**
  * Hanshin STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="Hanshin STEM analog sensors"
-// groups=['Ambient Light','Flame', 'Moisture','Tracker','others']
+// groups=['Analog Sound'，'Ambient Light','Flame', 'Moisture','Tracker','others']
+
+    //% group="Analog Sound"
+    export namespace AnalogSound {
+        //% blockId=soundValue block="Read sound value at pin=%p"
+        //% group="Analog Sound"
+        export function soundValue(p: AnalogPin): number {
+            return pins.analogReadPin(p)
+        }
+    };
 
     //% group="Ambient Light"
     export namespace AmbientLignt {
