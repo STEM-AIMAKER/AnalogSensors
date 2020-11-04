@@ -25,7 +25,7 @@ namespace HanshinAnalogSensors
         //% blockId=lightValue block="Read light value at pin=%p"
         //% group="Ambient Light"
         export function lightValue(p: AnalogPin): number {
-            return pins.analogReadPin(p);
+            return (1024-pins.analogReadPin(p));
         }
     };
 
