@@ -1,7 +1,7 @@
 {
     "name": "analogsensors",
-    "version": "0.0.0",
-    "description": "",
+    "version": "1.0.0",
+    "description": "AIMaker analog sensors library",
     "dependencies": {
         "core": "*",
         "radio": "*"
