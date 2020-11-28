@@ -1,20 +1,20 @@
 /**
- * Hanshin STEM Sensors
+ * AIMaker STEM Sensors
  */
-//% color=190 weight=100 icon="\uf1ec" block="HANSHIN: analog sensors"
-//% groups=['Analog Sound','Ambient Light','Flame', 'Moisture','Tracker','others']
-namespace HanshinAnalogSensors
+//% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
+//% groups=['Sound','Ambient Light','Flame', 'Soil Moisture','Tracker','others']
+namespace AIMakerAnalogSensors
 {
 /**
- * Hanshin STEM Sensors
+ * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="Hanshin STEM analog sensors"
-// groups=['Analog Sound'，'Ambient Light','Flame', 'Moisture','Tracker','others']
+// groups=['Sound'，'Ambient Light','Flame', 'Soil Moisture','Tracker','others']
 
-    //% group="Analog Sound"
+    //% group="Sound"
     export namespace AnalogSound {
         //% blockId=soundValue block="Read sound value at pin=%p"
-        //% group="Analog Sound"
+        //% group="Sound"
         export function soundValue(p: AnalogPin): number {
             return pins.analogReadPin(p)
         }
@@ -47,10 +47,10 @@ namespace HanshinAnalogSensors
         }
     };
 
-    //% group="Moisture"
+    //% group="Soil Moisture"
     export namespace Moisture {
         //% blockId=moistureValue block="Read moisture value at pin=%p"
-        //% group="Moisture"
+        //% group="Soil Moisture"
         export function moistureValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
