@@ -1,5 +1,5 @@
 {
-    "name": "analogsensors",
+    "name": "AIMakerAnalogSensors",
     "version": "1.0.0",
     "description": "AIMaker analog sensors library",
     "dependencies": {
