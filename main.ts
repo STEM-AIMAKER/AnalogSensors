@@ -3,7 +3,7 @@
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
 //% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture Sensor','Laser Distance Sensor','others']
-namespace AIMakerAnalogSensors
+namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
