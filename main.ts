@@ -57,7 +57,7 @@ namespace aimakeranalogsensors
     };
 
     //% group="Laser Distance Sensor"
-    export namespace Tracker {
+    export namespace Laser Distance {
         //% blockId=trackerValue block="Read tracker value at pin=%p"
         //% group="Laser Distance Sensor"
         export function trackerValue(p: AnalogPin): number {
