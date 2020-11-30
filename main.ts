@@ -9,8 +9,7 @@ namespace AIMakerAnalogSensors
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound'，'Ambient Light','
-    ', 'Soil Moisture','Tracker','others']
+// groups=['Sound','Ambient Light','Flame', 'Soil Moisture','Tracker','others']
 
     //% group="Sound"
     export namespace AnalogSound {
