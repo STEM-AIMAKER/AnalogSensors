@@ -8,8 +8,9 @@ namespace AIMakerAnalogSensors
 /**
  * AIMaker STEM Sensors
  */
-// color=190 weight=100 icon="\uf1ec" block="Hanshin STEM analog sensors"
-// groups=['Sound'，'Ambient Light','Flame', 'Soil Moisture','Tracker','others']
+// color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
+// groups=['Sound'，'Ambient Light','
+    ', 'Soil Moisture','Tracker','others']
 
     //% group="Sound"
     export namespace AnalogSound {
@@ -31,13 +32,13 @@ namespace AIMakerAnalogSensors
 
     //% group="Flame"
     export namespace Flame {
-        //% blockId=flameValue block="Read frame value at pin=%p"
+        //% blockId=flameValue block="Read flame value at pin=%p"
         //% group="Flame"
         export function flameValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
 
-        //% blockId=isFlame block="Is frame at pin=%p"
+        //% blockId=isFlame block="Is flame at pin=%p"
         //% group="Flame"
         export function isFlame(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
