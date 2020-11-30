@@ -2,14 +2,14 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light','Flame', 'Soil Moisture','Tracker','others']
+//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture Sensor','Laser Distance Sensor','others']
 namespace AIMakerAnalogSensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound','Ambient Light','Flame', 'Soil Moisture','Tracker','others']
+// groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture Sensor','Laser Distance Sensor','others']
 
     //% group="Sound"
     export namespace AnalogSound {
@@ -20,25 +20,25 @@ namespace AIMakerAnalogSensors
         }
     };
 
-    //% group="Ambient Light"
-    export namespace AmbientLignt {
+    //% group="Ambient Light Sensor"
+    export namespace AmbientLight {
         //% blockId=lightValue block="Read light value at pin=%p"
-        //% group="Ambient Light"
+        //% group="Ambient Light Sensor"
         export function lightValue(p: AnalogPin): number {
             return (1024-pins.analogReadPin(p));
         }
     };
 
-    //% group="Flame"
+    //% group="Flame Sensor"
     export namespace Flame {
         //% blockId=flameValue block="Read flame value at pin=%p"
-        //% group="Flame"
+        //% group="Flame Sensor"
         export function flameValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
 
-        //% blockId=isFlame block="Is flame at pin=%p"
-        //% group="Flame"
+        //% blockId=isFlame block="When flame exists at pin=%p"
+        //% group="Flame Sensor"
         export function isFlame(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
                 return true;
@@ -47,25 +47,25 @@ namespace AIMakerAnalogSensors
         }
     };
 
-    //% group="Soil Moisture"
+    //% group="Soil Moisture Sensor"
     export namespace Moisture {
         //% blockId=moistureValue block="Read moisture value at pin=%p"
-        //% group="Soil Moisture"
+        //% group="Soil Moisture Sensor"
         export function moistureValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
     };
 
-    //% group="Tracker"
+    //% group="Laser Distance Sensor"
     export namespace Tracker {
         //% blockId=trackerValue block="Read tracker value at pin=%p"
-        //% group="Tracker"
+        //% group="Laser Distance Sensor"
         export function trackerValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
 
         //% blockId=isBlackLine block="Is black line at pin=%p"
-        //% group="Tracker"
+        //% group="Laser Distance Sensor"
         export function isBlackLine(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
                 return true;
