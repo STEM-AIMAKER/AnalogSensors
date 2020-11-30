@@ -64,7 +64,7 @@ namespace aimakeranalogsensors
             return pins.analogReadPin(p);
         }
 
-        //% blockId=isBlackLine block="When black line detected at pin=%p"
+        //% blockId=isBlackLine block="Detect black line  at pin=%p"
         //% group="Laser Distance Sensor"
         export function isBlackLine(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
