@@ -64,7 +64,7 @@ namespace aimakeranalogsensors
             return pins.analogReadPin(p);
         }
 
-        //% blockId=isBlackLine block="Detected black line  at pin=%p"
+        //% blockId=isBlackLine block="Detected black line at pin=%p"
         //% group="Reflective Infrared Sensor"
         export function isBlackLine(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
