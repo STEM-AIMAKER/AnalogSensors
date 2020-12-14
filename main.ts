@@ -2,14 +2,14 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
+// groups=['Sound','Ambient Light Sensor','Flame Sensor','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
 
     //% group="Sound"
     export namespace AnalogSound {
@@ -46,7 +46,19 @@ namespace aimakeranalogsensors
             return false;
         }
     };
-
+        
+    //% group="Soil Moisture D19A"
+    export namespace MoistureD19A {
+        //% blockId=moistureD19AValue block="Read moisture(D19A) value at pin=%p"
+        //% group="Soil Moisture D19A"
+        export function moistureD19AValue(p: AnalogPin): number {
+            let v = analogReadPin(p);
+            v = v*100/1024;
+            v = 100 - v;
+            return ((int)v);
+        }
+    };
+        
     //% group="Soil Moisture Sensor"
     export namespace Moisture {
         //% blockId=moistureValue block="Read moisture value at pin=%p"
