@@ -55,7 +55,8 @@ namespace aimakeranalogsensors
             let v = analogReadPin(p);
             v = v*100/1024;
             v = 100 - v;
-            return ((int)v);
+            let ret:number = v
+            return ret;
         }
     };
         
