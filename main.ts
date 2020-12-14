@@ -52,7 +52,7 @@ namespace aimakeranalogsensors
         //% blockId=moistureD19AValue block="Read moisture(D19A) value at pin=%p"
         //% group="Soil Moisture D19A"
         export function moistureD19AValue(p: AnalogPin): number {
-            let v = analogReadPin(p);
+            let v = pins.analogReadPin(p);
             v = v*100/1024;
             v = 100 - v;
             let ret:number = v
