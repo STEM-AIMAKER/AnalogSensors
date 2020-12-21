@@ -2,14 +2,14 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Liquid Temperature D20A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound','Ambient Light Sensor','Flame Sensor','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
+// groups=['Sound','Ambient Light Sensor','Flame Sensor','Liquid Temperature D20A','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
 
     //% group="Sound"
     export namespace AnalogSound {
@@ -46,6 +46,24 @@ namespace aimakeranalogsensors
             return false;
         }
     };
+         
+    //% group="Liquid Temperature D20A"
+    export namespace LiquidTemperatureSensor {
+        //% blockId=TemperatureValue block="Read temperature value at pin=%p"
+        //% group="Liquid Temperature D20A"
+        export function TemperatureValue(p: AnalogPin): number {
+            let t = pins.analogReadPin(p);
+            let x = t*3.3/1024;
+            let A=0.000000000189554518867839;
+            let B=-0.000000889604356394295;
+            let C=0.00159126906028872;
+            let D=-1.62903761539578;
+            let E=834.352750181949;
+            let airtemp=A*Math.pow(x,4)+B*Math.pow(x,3)+C*Math.pow(x,2)+D*x+E;
+            
+            return airtemp;
+        }
+    };  
         
     //% group="Soil Moisture D19A"
     export namespace MoistureD19A {
