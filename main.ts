@@ -53,7 +53,7 @@ namespace aimakeranalogsensors
         //% group="Liquid Temperature D20A"
         export function TemperatureValue(p: AnalogPin): number {
             let t = pins.analogReadPin(p);
-            let x = t*3.3/1024;
+            let x = t*3300/1024;
             let A=0.000000000189554518867839;
             let B=-0.000000889604356394295;
             let C=0.00159126906028872;
