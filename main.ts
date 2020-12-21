@@ -61,7 +61,7 @@ namespace aimakeranalogsensors
             let E=834.352750181949;
             let airtemp=A*Math.pow(x,4)+B*Math.pow(x,3)+C*Math.pow(x,2)+D*x+E;
             
-            return airtemp;
+            return airtemp/10.0;
         }
     };  
         
