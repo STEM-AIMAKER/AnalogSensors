@@ -30,7 +30,7 @@ namespace aimakeranalogsensors
     };
 
     //% group="Dissolved Oxygen D21A"
-    export namespace AmbientLight {
+    export namespace DissolvedOxygen {
         //% blockId=oxygenValue block="Read oxygen level at pin=%p"
         //% group="Dissolved Oxygen"
          export function oxygenValue(p: AnalogPin): number {
