@@ -2,14 +2,14 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Flame Sensor', 'Liquid Temperature D20A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor', 'Liquid Temperature D20A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound','Ambient Light Sensor','Flame Sensor','Liquid Temperature D20A','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
+// groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor','Liquid Temperature D20A','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
 
     //% group="Sound"
     export namespace AnalogSound {
@@ -29,6 +29,18 @@ namespace aimakeranalogsensors
         }
     };
 
+    //% group="Dissolved Oxygen D21A"
+    export namespace AmbientLight {
+        //% blockId=oxygenValue block="Read oxygen level at pin=%p"
+        //% group="Dissolved Oxygen"
+         export function oxygenValue(p: AnalogPin): number {
+            let k = 0.0152420701168614
+            let b = -0.4529883138564274
+            let v = k*pins.analogReadPin(p)+b
+            return v
+        }
+    };
+                
     //% group="Flame Sensor"
     export namespace Flame {
         //% blockId=flameValue block="Read flame value at pin=%p"
