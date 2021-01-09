@@ -26,7 +26,8 @@ namespace aimakeranalogsensors
         //% group="Ambient Light Sensor"
         export function lightValue(p: AnalogPin): number {
             let v = (1023-pins.analogReadPin(p));
-            return (100*v/1023)
+            let ret:number = (100*v/1023)
+            return ret
         }
     };
 
@@ -85,7 +86,7 @@ namespace aimakeranalogsensors
         export function moistureD19AValue(p: AnalogPin): number {
             let v = pins.analogReadPin(p);
             v = v*100/1024;
-            v = 100 - v;
+            //v = 100 - v;
             let ret:number = v
             return ret;
         }
