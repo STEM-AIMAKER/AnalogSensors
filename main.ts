@@ -25,7 +25,8 @@ namespace aimakeranalogsensors
         //% blockId=lightValue block="Read light value at pin=%p"
         //% group="Ambient Light Sensor"
         export function lightValue(p: AnalogPin): number {
-            return (1024-pins.analogReadPin(p));
+            let v = (1023-pins.analogReadPin(p));
+            return (100*v/1023)
         }
     };
 
