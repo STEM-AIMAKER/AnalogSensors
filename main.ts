@@ -27,7 +27,7 @@ namespace aimakeranalogsensors
         export function lightValue(p: AnalogPin): number {
             let v = (1023-pins.analogReadPin(p));
             let ret:number = (100*v/1023)
-            return ret
+            return ret.toFixed(1)
         }
     };
 
@@ -39,7 +39,7 @@ namespace aimakeranalogsensors
             let k = 0.0152420701168614
             let b = -0.4529883138564274
             let v = k*pins.analogReadPin(p)+b
-            return v
+            return v.toFixed(1)
         }
     };
                 
@@ -75,7 +75,7 @@ namespace aimakeranalogsensors
             let E=834.352750181949;
             let airtemp=A*Math.pow(x,4)+B*Math.pow(x,3)+C*Math.pow(x,2)+D*x+E;
             
-            return (airtemp/10.0);
+            return (airtemp/10.0).toFixed(1);
         }
     };  
         
@@ -88,7 +88,7 @@ namespace aimakeranalogsensors
             v = v*100/1024;
             //v = 100 - v;
             let ret:number = v
-            return ret;
+            return ret.toFixed(1);
         }
     };
         
@@ -101,7 +101,7 @@ namespace aimakeranalogsensors
              v = v*100/1024;
             //v = 100 - v;
             let ret:number = v
-            return ret;
+            return ret.toFixed(1);
         }
     };
 
