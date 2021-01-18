@@ -2,7 +2,7 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor', 'Liquid Temperature D20A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor', 'Liquid Temperature D20A','PH Meter D17A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
@@ -80,6 +80,28 @@ namespace aimakeranalogsensors
         }
     };  
         
+    
+    //% group="PH Meter D17A"
+    export namespace PHMeterD17A {
+        //% blockId=phD17AValue block="Read PH (D17A) value at pin=%p"
+        //% group="PH Meter D17A"
+        export function phD17AValue(p: AnalogPin): number {
+            let v = pins.analogReadPin(p);
+            v = (v*3.1)/1024
+            let k = 0.0
+            let b = 0.0
+            if( v <= 1.91 ) {
+                k = (6.86-9.18) / (1.91-1.65)
+            } else {
+                k = (6.86-4.01) / (1.91-2.15)
+            }
+            b = 6.86 - k*1.91
+            v = k*v+b
+            let ret:number = Math.floor(v*100)
+            return (ret/100)
+        }
+    };
+
     //% group="Soil Moisture D19A"
     export namespace MoistureD19A {
         //% blockId=moistureD19AValue block="Read moisture(D19A) value at pin=%p"
