@@ -2,19 +2,19 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor', 'Liquid Temperature D20A','PH Meter D17A','Soil Moisture D19A','Soil Moisture Sensor','Reflective Infrared Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen Sensors','Flame Sensor', 'Liquid Temperature Sensor','PH Sensor','High Accurate Soil Moisture Senso','Soil Moisture Sensor','Tracker Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor','Liquid Temperature D20A','Soil Moisture D19A', 'Soil Moisture Sensor','Reflective Infrared Sensor','others']
+// groups=['Sound Sensor','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor','Liquid Temperature Sensor','High Accurate Soil Moisture Senso', 'Soil Moisture Sensor','Tracker Sensor','others']
 
-    //% group="Sound"
+    //% group="Sound Sensor"
     export namespace AnalogSound {
         //% blockId=soundValue block="Read sound value at pin=%p"
-        //% group="Sound"
+        //% group="Sound Sensor"
         export function soundValue(p: AnalogPin): number {
             return pins.analogReadPin(p)
         }
@@ -31,10 +31,10 @@ namespace aimakeranalogsensors
         }
     };
 
-    //% group="Dissolved Oxygen D21A"
+    //% group="Dissolved Oxygen Sensors"
     export namespace DissolvedOxygen {
         //% blockId=oxygenValue block="Read oxygen level at pin=%p"
-        //% group="Dissolved Oxygen D21A"
+        //% group="Dissolved Oxygen Sensors"
          export function oxygenValue(p: AnalogPin): number {
             let k = 0.0152420701168614
             let b = -0.4529883138564274
@@ -62,10 +62,10 @@ namespace aimakeranalogsensors
         }
     };
          
-    //% group="Liquid Temperature D20A"
+    //% group="Liquid Temperature Sensor"
     export namespace LiquidTemperatureSensor {
         //% blockId=TemperatureValue block="Read temperature value at pin=%p"
-        //% group="Liquid Temperature D20A"
+        //% group="Liquid Temperature Sensor"
         export function TemperatureValue(p: AnalogPin): number {
             let t = pins.analogReadPin(p);
             let x = t*3000/1024;
@@ -81,10 +81,10 @@ namespace aimakeranalogsensors
     };  
         
     
-    //% group="PH Meter D17A"
+    //% group="PH Sensor"
     export namespace PHMeterD17A {
-        //% blockId=phD17AValue block="Read PH (D17A) value at pin=%p"
-        //% group="PH Meter D17A"
+        //% blockId=phD17AValue block="Read PH value at pin=%p"
+        //% group="PH Sensor"
         export function phD17AValue(p: AnalogPin): number {
             let v = pins.analogReadPin(p);
             v = (v*3.1)/1024
@@ -102,10 +102,10 @@ namespace aimakeranalogsensors
         }
     };
 
-    //% group="Soil Moisture D19A"
+    //% group="High Accurate Soil Moisture Senso"
     export namespace HighAccurateSoilMoisture {
         //% blockId=HighAccurateSoilMoistureValue block="Read high accurate moisture value at pin=%p"
-        //% group="Soil Moisture D19A"
+        //% group="High Accurate Soil Moisture Senso"
         export function highaccuratemoistureValue(p: AnalogPin): number {
             let v = pins.analogReadPin(p);
             v = v*100/1024;
@@ -128,16 +128,16 @@ namespace aimakeranalogsensors
         }
     };
 
-    //% group="Reflective Infrared Sensor"
+    //% group="Tracker Sensor"
     export namespace Tracker {
         //% blockId=trackerValue block="Read tracker value at pin=%p"
-        //% group="Reflective Infrared Sensor"
+        //% group="Tracker Sensor"
         export function trackerValue(p: AnalogPin): number {
             return pins.analogReadPin(p);
         }
 
         //% blockId=isBlackLine block="Black line is detected at pin=%p"
-        //% group="Reflective Infrared Sensor"
+        //% group="Tracker Sensor"
         export function isBlackLine(p: AnalogPin): boolean {
             if( pins.analogReadPin(p) >= 50 ) {
                 return true;
