@@ -34,7 +34,7 @@ namespace aimakeranalogsensors
     //% group="Dissolved Oxygen D21A"
     export namespace DissolvedOxygen {
         //% blockId=oxygenValue block="Read oxygen level at pin=%p"
-        //% group="Dissolved Oxygen"
+        //% group="Dissolved Oxygen D21A"
          export function oxygenValue(p: AnalogPin): number {
             let k = 0.0152420701168614
             let b = -0.4529883138564274
