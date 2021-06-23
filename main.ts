@@ -2,14 +2,14 @@
  * AIMaker STEM Sensors
  */
 //% color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen Sensors','Flame Sensor', 'Liquid Temperature Sensor','PH Sensor','High Accurate Soil Moisture Senso','Soil Moisture Sensor','Tracker Sensor','others']
+//% groups=['Sound','Ambient Light Sensor','Dissolved Oxygen Sensors','Flame Sensor', 'Liquid Temperature Sensor','PH Sensor','High Accurate Soil Moisture Sensor','Soil Moisture Sensor','Tracker Sensor','others']
 namespace aimakeranalogsensors
 {
 /**
  * AIMaker STEM Sensors
  */
 // color=190 weight=100 icon="\uf1ec" block="AIMaker: analog sensors"
-// groups=['Sound Sensor','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor','Liquid Temperature Sensor','High Accurate Soil Moisture Senso', 'Soil Moisture Sensor','Tracker Sensor','others']
+// groups=['Sound Sensor','Ambient Light Sensor','Dissolved Oxygen D21A','Flame Sensor','Liquid Temperature Sensor','High Accurate Soil Moisture Sensor', 'Soil Moisture Sensor','Tracker Sensor','others']
 
     //% group="Sound Sensor"
     export namespace AnalogSound {
@@ -103,10 +103,10 @@ namespace aimakeranalogsensors
         }
     };
 
-    //% group="High Accurate Soil Moisture Senso"
+    //% group="High Accurate Soil Moisture Sensor"
     export namespace HighAccurateSoilMoisture {
         //% blockId=HighAccurateSoilMoistureValue block="Read high accurate moisture value at pin=%p"
-        //% group="High Accurate Soil Moisture Senso"
+        //% group="High Accurate Soil Moisture Sensor"
         export function highaccuratemoistureValue(p: AnalogPin): number {
             let v = pins.analogReadPin(p);
             v = v*100/1024;
