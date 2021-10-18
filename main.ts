@@ -146,4 +146,21 @@ namespace aimakeranalogsensors
             return false;
         }
     };
+
+    //% group="Power Meter"
+    export namespace PowerMeter {
+        //% blockId=voltageValue block="Read Voltage value at pin=%p (mV)"
+        //% group="Power Meter"
+        export function voltageValue(p: AnalogPin): number {
+            let v = (11.72*pins.analogReadPin(p));
+            return v
+        }
+
+        //% blockId=currentValue block="Read Current value at pin=%p (mA)"
+        //% group="Power Meter"
+        export function currentValue(p: AnalogPin): number {
+            let v = 4.43*pins.analogReadPin(p)-1894;
+            return v
+        }
+    };
 }
